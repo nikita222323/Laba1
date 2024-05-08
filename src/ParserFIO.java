@@ -48,9 +48,7 @@ public class ParserFIO {
                 }
             }
 
-            System.out.println("Имена: " + teacher_names);
-            System.out.println("Фамилии: " + teacher_surnames);
-            System.out.println("Отчества: " + teacher_patronymics);
+
         } catch (Exception e) {
             e.printStackTrace();
         }

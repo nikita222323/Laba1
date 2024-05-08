@@ -6,7 +6,7 @@ public class StudentFactory {
 
     List<String> names ;
     List<String> surnames ;
-    public StudentFactory(String StudentName, StringStudentSecondName) {
+    public StudentFactory(List<String> names, List<String> surnames) {
         this.names = names;
         this.surnames = surnames;
 
