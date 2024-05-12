@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
 
-public class Teacher {
+public class Teacher extends Person {
     private String name;
     private String patronymic;
     private String surname;

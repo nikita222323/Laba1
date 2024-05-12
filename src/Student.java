@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
 
-public class Student {
+public class Student extends Person {
     private String name;
     private String surname;
     private List<Book> books;
@@ -15,6 +15,8 @@ public class Student {
     public String getName() {
         return name;
     }
+
+
 
     public void setName(String name) {
         this.name = name;

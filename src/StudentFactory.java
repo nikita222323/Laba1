@@ -3,25 +3,26 @@ import java.util.List;
 import java.util.Random;
 
 public class StudentFactory {
+    private List<String> names;
+    private List<String> surnames;
 
-    List<String> names ;
-    List<String> surnames ;
     public StudentFactory(List<String> names, List<String> surnames) {
         this.names = names;
         this.surnames = surnames;
-
     }
-    public Student makeStudent(){
-        if (names.isEmpty()) {
-            throw new IllegalArgumentException("List of names is empty!");
-        }
+
+    public Student makeStudent() {
         Random random = new Random();
         int randomIndex = random.nextInt(names.size());
-        String studentname = names.get(randomIndex);
-        String surname = surnames.get(randomIndex);
-        Student student = new Student(studentname, surname);
-        return student;
-}
-}
+        String studentName = names.get(randomIndex);
+        String studentSurname = surnames.get(randomIndex);
+        return new Student(studentName, studentSurname);
+    }
 
-
+    public static StudentFactory readFromExcel(String namesFilePath, String surnamesFilePath) {
+        ExcelReader excelReader = new ExcelReader();
+        List<String> names = excelReader.ReadExcel(namesFilePath);
+        List<String> surnames = excelReader.ReadExcel(surnamesFilePath);
+        return new StudentFactory(names, surnames);
+    }
+}
