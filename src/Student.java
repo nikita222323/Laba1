@@ -40,6 +40,6 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-            return this.surname + " " + this.name;
+            return this.surname + " " + this.name + " " + this.books;
     }
 }

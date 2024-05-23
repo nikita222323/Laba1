@@ -15,6 +15,9 @@ public class Library {
     public void addBook(Book book) {
         books.add(book);
     }
+    public void addBooks(List<Book> books){
+    this.books.addAll(books);
+    }
 
     public List<Book> getBooks() {
         return books;
@@ -22,7 +25,7 @@ public class Library {
 
     public Book getRandomBook(Person person) {
         if (books.isEmpty()) {
-            return null;
+            throw new IllegalArgumentException("Лист с книгами пустой!");
         }
         int randomIndex = new Random().nextInt(books.size());
         Book randomBook = books.get(randomIndex);
@@ -40,34 +43,18 @@ public class Library {
                 books.add(returnedBook);
                 System.out.println("Книга возвращена.");
             } else {
-                System.out.println("The person did not rent this book.");
+                System.out.println("Этот ученик не взял эту книгу.");;
             }
         } else {
-            System.out.println("The person has not rented any books.");
+            System.out.println("Этот ученик не взял книгу.");
         }
     }
-    public void generateRandomUsers(int numOfStudents, int numOfTeachers) {
-        List<Student> students = new ArrayList<>();
-        List<Teacher> teachers = new ArrayList<>();
-
-        for (int i = 0; i < numOfStudents; i++) {
-            Student student = studentFactory.makeStudent();
-            students.add(student);
+    public List<Person> TakeRandomBook(List<Person> person) {
+        for (Person person1 : person) {
+            int randomIndex = new Random().nextInt(3, 10);
+            for (int i = 0; i < randomIndex; i++){
+            Book book = getRandomBook(person1);}
         }
-
-        for (int i = 0; i < numOfTeachers; i++) {
-            Teacher teacher = teacherFactory.makeTeacher();
-            teachers.add(teacher);
-        }
-
-        System.out.println("Generated Students:");
-        for (Student student : students) {
-            System.out.println(student.toString());
-        }
-
-        System.out.println("Generated Teachers:");
-        for (Teacher teacher : teachers) {
-            System.out.println(teacher.toString());
-        }
+        return person;
     }
 }

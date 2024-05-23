@@ -19,10 +19,19 @@ public class StudentFactory {
         return new Student(studentName, studentSurname);
     }
 
-    public static StudentFactory readFromExcel(String namesFilePath, String surnamesFilePath) {
-        ExcelReader excelReader = new ExcelReader();
-        List<String> names = excelReader.ReadExcel(namesFilePath);
-        List<String> surnames = excelReader.ReadExcel(surnamesFilePath);
-        return new StudentFactory(names, surnames);
+    public List<Student> makeStudents(int count) {
+        List<Student> students = new ArrayList<>();
+        for (int i = 0; i < count; i++) {
+            Student student = makeStudent();
+            students.add(student);
+        }
+        return students;
     }
+
+   // public static StudentFactory readFromExcel(String namesFilePath, String surnamesFilePath) {
+     //   ExcelReader excelReader = new ExcelReader();
+       // List<String> names = excelReader.ReadExcel(namesFilePath);
+        //List<String> surnames = excelReader.ReadExcel(surnamesFilePath);
+        //return new StudentFactory(names, surnames);
+    //}
 }

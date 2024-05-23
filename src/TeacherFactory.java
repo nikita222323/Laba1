@@ -1,11 +1,12 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class TeacherFactory {
 
-    List<String> names ;
-    List<String> surnames ;
-    List<String> patronymic ;
+   private List<String> names ;
+    private List<String> surnames ;
+   private List<String> patronymic ;
 
     public TeacherFactory(List<String> names, List<String> surnames, List<String> patronymic) {
         this.names = names;
@@ -21,5 +22,15 @@ public class TeacherFactory {
         String teacher_patronymic = patronymic.get(randomIndex);
         Teacher teacher = new Teacher(teachert_name, teacher_surname, teacher_patronymic);
         return teacher;
+    }
+
+    public List<Teacher> makeTeachers(int count) {
+        List<Teacher> teachers = new ArrayList<>();
+        for (int i = 0; i < count; i++) {
+            Teacher teacher = makeTeacher();
+            teachers .add(teacher);
+        }
+        return teachers ;
+
     }
 }
