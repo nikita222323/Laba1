@@ -1,4 +1,3 @@
-import javax.lang.model.element.Name;
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.io.IOException;
@@ -6,10 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Random;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-
 
 
 public class Main {
@@ -30,7 +25,7 @@ public class Main {
         List<String> EngNameBooks = ParserBook.ParseEnglishBook();
         List<Book> books = new ArrayList<Book>();
         for (String i : NameBooks) {
-            books.add(new Book.Builder().name(i).build());
+            books.add(new BookBuilder().name(i).build());
         }
 
         List<String> types = new ArrayList<String>();
@@ -46,14 +41,14 @@ public class Main {
         for (String i : Objects) {
             int randomIndex = new Random().nextInt(types.size());
             String random_Name = types.get(randomIndex);
-            books.add(new Book.Builder().name(i).type(random_Name).build());
+            books.add(new BookBuilder().name(i).type(random_Name).build());
 
         }
 
         for (String i : EngNameBooks) {
             int randomIndex = new Random().nextInt(types.size());
             String random_Name = level.get(randomIndex);
-            books.add(new Book.Builder().name(i).level(random_Name).build());
+            books.add(new BookBuilder().name(i).level(random_Name).build());
         }
 
         StudentFactory studentFactory = new StudentFactory(names, surnames);

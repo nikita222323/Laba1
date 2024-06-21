@@ -53,9 +53,4 @@ public class ParserFIO {
             e.printStackTrace();
         }
     }
-
-    public static void main(String[] args) {
-        ParserFIO parser = new ParserFIO();
-        parser.parseTeacherData();
-    }
 }

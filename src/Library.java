@@ -6,8 +6,6 @@ import java.util.Random;
 public class Library {
     private List<Book> books = new ArrayList<>();
     private HashMap<Person, List<Book>> rentedBooks = new HashMap<>();
-    private StudentFactory studentFactory;
-    private TeacherFactory teacherFactory;
 
     public Library() {
     }
@@ -35,20 +33,7 @@ public class Library {
         return randomBook;
     }
 
-    public void returnBook(Person person, Book returnedBook) {
-        if (rentedBooks.containsKey(person)) {
-            List<Book> personBooks = rentedBooks.get(person);
-            if (personBooks.contains(returnedBook)) {
-                personBooks.remove(returnedBook);
-                books.add(returnedBook);
-                System.out.println("Книга возвращена.");
-            } else {
-                System.out.println("Этот ученик не взял эту книгу.");;
-            }
-        } else {
-            System.out.println("Этот ученик не взял книгу.");
-        }
-    }
+
     public List<Person> TakeRandomBook(List<Person> person) {
         for (Person person1 : person) {
             int randomIndex = new Random().nextInt(3, 10);

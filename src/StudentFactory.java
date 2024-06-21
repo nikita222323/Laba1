@@ -28,10 +28,4 @@ public class StudentFactory {
         return students;
     }
 
-   // public static StudentFactory readFromExcel(String namesFilePath, String surnamesFilePath) {
-     //   ExcelReader excelReader = new ExcelReader();
-       // List<String> names = excelReader.ReadExcel(namesFilePath);
-        //List<String> surnames = excelReader.ReadExcel(surnamesFilePath);
-        //return new StudentFactory(names, surnames);
-    //}
 }

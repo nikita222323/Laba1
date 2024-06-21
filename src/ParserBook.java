@@ -55,12 +55,4 @@ public class ParserBook {
         }
         return EnglishBookList;
     }
-
-    public static void main(String[] args) throws IOException {
-        ParserBook parser = new ParserBook();
-        parser.ParseNameBook();
-        parser.ParseEnglishBook();
-        System.out.println(Arrays.toString(parser.ParseNameBook().toArray()));
-       // System.out.println(Arrays.toString(parser.ParseEnglishBook().toArray()));
-    }
 }
